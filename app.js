@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes');
 const financialRoutes = require('./routes/financialRoutes');
+const transactionRoutes = require('./routes/transactionRoutes');
 require('dotenv').config();
 
 const app = express();
@@ -11,6 +12,7 @@ app.use(bodyParser.json());
 // Routes
 app.use('/auth', authRoutes);
 app.use('/financial', financialRoutes);
+app.use('/transaction', transactionRoutes);
 
 // Error handling
 app.use((err, req, res, next) => {
